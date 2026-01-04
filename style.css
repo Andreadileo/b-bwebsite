@@ -1,0 +1,345 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2c2c2c;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(20, 20, 20, 0.95);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.nav-cta {
+  padding: 8px 18px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 75px;
+    right: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 14px;
+    padding: 20px 25px;
+    display: none;
+    flex-direction: column;
+    min-width: 160px;
+  }
+
+  nav a {
+    margin: 12px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("img/hero1.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  max-width: 720px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+  font-weight: 300;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #c8a96a;
+  color: #ffffff;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #b89655;
+}
+
+/* =========================
+   VALUE SECTION
+========================= */
+
+.value {
+  padding: 90px 10%;
+  background: #f7f7f7;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.value-item h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.value-item p {
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+  padding: 90px 10%;
+  text-align: center;
+}
+
+.story h2 {
+  font-size: 2rem;
+}
+
+.story p {
+  max-width: 720px;
+  margin: 25px auto 0;
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  padding: 90px 10%;
+  background: #2c2c2c;
+  color: #000000;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+}
+
+.contact p {
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.contact-buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  padding: 12px 26px;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: #2c2c2c;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #1e1e1e;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   FADE-IN ANIMATIONS
+========================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   PHOTO SECTIONS
+========================= */
+
+.photo-section {
+  padding: 90px 10%;
+  background: #ffffff;
+}
+
+.photo-section.alt {
+  background: #f7f7f7;
+}
+
+.photo-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.4s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* immagini alte tipo Odoo */
+.photo-grid.tall img {
+  height: 320px;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .photo-grid.tall img {
+    height: 240px;
+  }
+}
