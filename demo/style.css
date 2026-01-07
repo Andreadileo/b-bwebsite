@@ -264,8 +264,9 @@ nav a:hover {
 }
 
 .btn-secondary:hover {
-  background: #ffffff;
-  color: #2c2c2c;
+  background: #2c2c2c;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* =========================
@@ -342,4 +343,54 @@ footer {
   .photo-grid.tall img {
     height: 240px;
   }
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #c8a96a;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map-container {
+  max-width: 900px;
+  margin: 30px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.contact-buttons-section {
+  padding: 60px 10%;
+  background: #ffffff;
+  text-align: center;
 }
