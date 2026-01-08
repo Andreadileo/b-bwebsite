@@ -1,103 +1,248 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>L’esperienza · B&B La Piazzetta Del Sole</title>
-  <meta name="description" content="Scopri l’esperienza al B&B La Piazzetta Del Sole: relax, natura, silenzio e accoglienza autentica a Pettinengo, in Piemonte.">
+  <title>L'Esperienza | B&B La Piazzetta Del Sole a Pettinengo</title>
+  <meta name="description"
+    content="Scopri l'esperienza al B&B La Piazzetta Del Sole: relax, natura, silenzio e accoglienza autentica a Pettinengo, nel cuore del Piemonte.">
 
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
 
-<header class="navbar scrolled">
-  <div class="nav-container">
-    <div class="logo">La Piazzetta Del Sole</div>
+  <!-- NAVBAR -->
+  <header class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">La Piazzetta Del Sole</a>
 
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="contatti.html" class="nav-cta">Prenota Ora</a>
+      </nav>
     </div>
+  </header>
 
-    <nav id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="contatti.html" class="nav-cta">Contatti</a>
-    </nav>
-  </div>
-</header>
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <h1>L'Esperienza</h1>
+    <p>Dove il tempo rallenta e la bellezza si rivela</p>
+  </section>
 
-<!-- INTRO -->
-<section class="story fade-in">
-  <h2>Un soggiorno che rallenta il tempo</h2>
-  <p>
-    Qui non si viene solo a dormire. Si viene per staccare, respirare,
-    ritrovare silenzio, luce e semplicità.
-    La Piazzetta Del Sole è pensata per chi cerca pace, autenticità e bellezza.
-  </p>
-</section>
+  <!-- INTRO -->
+  <section class="story fade-in">
+    <h2>Un soggiorno che rallenta il tempo</h2>
+    <p>
+      Qui non si viene solo a dormire. Si viene per staccare, respirare,
+      ritrovare silenzio, luce e semplicità.
+      La Piazzetta Del Sole è pensata per chi cerca pace, autenticità e bellezza.
+    </p>
+  </section>
 
-<!-- CAMERE -->
-<section class="photo-section fade-in">
-  <h2>Le camere</h2>
-  <p style="text-align:center; max-width:720px; margin:0 auto 40px; color:#555;">
-    Ambienti luminosi, curati, pensati per il riposo vero. Ogni camera è progettata
-    per farti sentire a tuo agio, senza eccessi, senza rumore.
-  </p>
+  <!-- LE CAMERE -->
+  <section class="photo-section fade-in">
+    <h2>Le Camere</h2>
+    <p>
+      Ambienti luminosi, curati nei dettagli, pensati per il riposo vero.
+      Ogni camera è progettata per farti sentire a tuo agio, senza eccessi, in armonia con la natura circostante.
+    </p>
+    <div class="photo-grid tall">
+      <img src="img/esperienza2.png" alt="Camera accogliente del B&B">
+      <img src="img/esperienza5.png" alt="Vista panoramica dalla camera">
+    </div>
+  </section>
 
-  <div class="photo-grid tall">
-    <img src="img/esperienza2.png" alt="Camera del B&B">
-    <img src="img/esperienza5.png" alt="Vista panoramica">
-  </div>
-</section>
+  <!-- FEATURES CARDS -->
+  <section class="value">
+    <div class="value-item fade-in">
+      <span class="value-icon">🛏️</span>
+      <h3>Comfort Essenziale</h3>
+      <p>Letti di qualità, biancheria in cotone e silenzio. Tutto quello che serve per un riposo rigenerante.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🌅</span>
+      <h3>Vista Panoramica</h3>
+      <p>Svegliati con una vista sulle colline biellesi che ti accompagnerà per tutto il giorno.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🍃</span>
+      <h3>Aria Pura</h3>
+      <p>Lontano dal traffico e dallo smog, qui respiri aria che profuma di natura.</p>
+    </div>
+  </section>
 
-<!-- COLAZIONE -->
-<section class="story fade-in">
-  <h2>Il risveglio</h2>
-  <p>
-    Le mattine iniziano con calma. Una colazione semplice e genuina,
-    il silenzio del paese, la luce che entra dalle finestre.
-    Qui non c’è fretta. C’è solo tempo.
-  </p>
-</section>
+  <!-- COLAZIONE -->
+  <section class="story fade-in" style="background: var(--color-bg-section);">
+    <h2>Il Risveglio</h2>
+    <p>
+      Le mattine iniziano con calma. Una colazione semplice e genuina con prodotti locali,
+      il silenzio del paese, la luce che entra dalle finestre.
+      Qui non c'è fretta. C'è solo tempo per goderti ogni momento.
+    </p>
+  </section>
 
-<!-- TERRITORIO -->
-<section class="photo-section alt fade-in">
-  <h2>Il territorio</h2>
-  <p style="text-align:center; max-width:720px; margin:0 auto 40px; color:#555;">
-    Pettinengo e il Biellese offrono natura, passeggiate, panorami e borghi autentici.
-    Ogni giornata può diventare una scoperta.
-  </p>
+  <!-- GALLERY COLAZIONE -->
+  <section class="photo-section alt fade-in">
+    <h2>Sapori del Territorio</h2>
+    <div class="photo-grid">
+      <img src="img/esperienza3.png" alt="Colazione genuina">
+      <img src="img/esperienza6.png" alt="Prodotti locali piemontesi">
+      <img src="img/esperienza7.png" alt="Tavola apparecchiata">
+    </div>
+  </section>
 
-  <div class="photo-grid tall">
-    <img src="img/luogo1.webp" alt="Territorio del Biellese">
-    <img src="img/luogo2.png" alt="Paesaggio">
-    <img src="img/esperienza8.png" alt="Vista sui colli">
-  </div>
-</section>
+  <!-- TERRITORIO -->
+  <section class="story fade-in">
+    <h2>Il "Balcone del Biellese"</h2>
+    <p>
+      Pettinengo è chiamato il "balcone del Biellese" per la sua posizione panoramica a 700 metri di altitudine,
+      con vedute spettacolari sulle Alpi. A soli 13 km da Biella, è il punto di partenza ideale per esplorare
+      le cinque valli biellesi: Valle Oropa, Valle Elvo, Valle Cervo, Valle Mosso e Valle Sessera.
+    </p>
+  </section>
 
-<!-- CTA -->
-<section class="story fade-in">
-  <h2>Pronto a partire?</h2>
-  <p>
-    Se cerchi un luogo dove rallentare davvero, La Piazzetta Del Sole ti aspetta.
-  </p>
-  <div style="margin-top:30px;">
-    <a href="contatti.html" class="btn-primary">Richiedi disponibilità</a>
-  </div>
-</section>
+  <!-- GALLERY TERRITORIO -->
+  <section class="photo-section fade-in">
+    <h2>Esplora il Biellese</h2>
+    <div class="photo-grid tall">
+      <img src="img/luogo1.webp" alt="Panorama del territorio Biellese">
+      <img src="img/luogo2.png" alt="Paesaggio naturale piemontese">
+      <img src="img/esperienza8.png" alt="Vista sulle colline">
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <p><strong>B&B La Piazzetta Del Sole</strong></p>
-  <p>Via Ennio Carando 12, 13843 Pettinengo (BI), Italia</p>
-  <p>Tel: <a href="tel:+393473714016">347 3714016</a> · Email: <a href="mailto:lapiazzettadelsole@gmail.com">lapiazzettadelsole@gmail.com</a></p>
-  <p>CIN: IT096042C1SFD FXCRE · CIR: 096042-BEB-00004</p>
-  <p>© 2026 La Piazzetta Del Sole</p>
-</footer>
+  <!-- ATTIVITÀ -->
+  <section class="value" style="background: #ffffff;">
+    <div class="value-item fade-in">
+      <span class="value-icon">🥾</span>
+      <h3>Trekking & Sentieri</h3>
+      <p><strong>Oasi Zegna</strong> con il "Bosco del Sorriso", <strong>Parco Burcina</strong>, sentieri verso il
+        Santuario di Oropa e la Grande Traversata del Biellese (GtB).</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🚴</span>
+      <h3>Mountain Bike</h3>
+      <p>La <strong>vecchia tramvia Biella-Oropa</strong> è ora un percorso MTB spettacolare. Numerosi itinerari tra
+        colline e borghi storici.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🏛️</span>
+      <h3>Borghi & Cultura</h3>
+      <p><strong>Ricetto di Candelo</strong> (borgo medievale fortificato), <strong>Santuario di Oropa</strong>
+        (patrimonio UNESCO), <strong>Villa Piazzo</strong> e il centro storico di Biella.</p>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- COSA VEDERE - ATTRAZIONI PRINCIPALI -->
+  <section class="story fade-in" style="background: var(--color-bg-section);">
+    <h2>Da Non Perdere</h2>
+    <p>
+      Le attrazioni imperdibili del territorio, tutte facilmente raggiungibili dal B&B:
+    </p>
+  </section>
+
+  <section class="value" style="background: var(--color-bg-section);">
+    <div class="value-item fade-in">
+      <span class="value-icon">⛪</span>
+      <h3>Santuario di Oropa</h3>
+      <p>Il più importante santuario mariano delle Alpi, patrimonio UNESCO. Spettacolare complesso barocco a 1200m di
+        quota, raggiungibile anche in funivia.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🏰</span>
+      <h3>Ricetto di Candelo</h3>
+      <p>Borgo medievale fortificato del XIV secolo, uno dei meglio conservati d'Europa. A soli 8 km da Pettinengo,
+        ospita eventi e mercatini tutto l'anno.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🌲</span>
+      <h3>Oasi Zegna</h3>
+      <p>Area naturale protetta con il famoso "Bosco del Sorriso", percorso esperienziale tra faggi secolari. Ideale per
+        famiglie e amanti della natura.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🏛️</span>
+      <h3>Villa Piazzo</h3>
+      <p>Villa ottocentesca a Pettinengo con parco all'inglese, sequoie giganti e l'Orto del Terzo Paradiso, opera di
+        land art di Michelangelo Pistoletto.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🌳</span>
+      <h3>Parco Burcina</h3>
+      <p>Giardino botanico di 57 ettari famoso per la fioritura dei rododendri (maggio-giugno). Passeggiate panoramiche
+        tra alberi monumentali.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🏊</span>
+      <h3>Lago di Viverone</h3>
+      <p>Terzo lago del Piemonte, perfetto per sport acquatici, passeggiate lungolago e relax in spiaggia. A circa 30
+        minuti di auto.</p>
+    </div>
+  </section>
+
+  <!-- INVERNO -->
+  <section class="story fade-in">
+    <h2>D'Inverno: Neve e Sci</h2>
+    <p>
+      La posizione strategica del B&B permette di raggiungere facilmente le principali stazioni sciistiche del Piemonte,
+      dalle piste locali del Biellese ai comprensori internazionali del Monte Rosa.
+    </p>
+  </section>
+
+  <section class="value">
+    <div class="value-item fade-in">
+      <span class="value-icon">⛷️</span>
+      <h3>Bielmonte</h3>
+      <p>La stazione sciistica più vicina, a soli <strong>30 km</strong> (~40 min). Piste per famiglie, sci di fondo e
+        ciaspolate nell'Oasi Zegna.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🏔️</span>
+      <h3>Monterosa Ski - Alagna</h3>
+      <p>Comprensorio internazionale ai piedi del <strong>Monte Rosa</strong>, a circa <strong>90 km</strong> (~1h15).
+        Piste fino a 3.275m tra Piemonte e Valle d'Aosta.</p>
+    </div>
+    <div class="value-item fade-in">
+      <span class="value-icon">🥾</span>
+      <h3>Ciaspolate</h3>
+      <p>Escursioni con le ciaspole nell'Oasi Zegna e nei sentieri innevati delle Alpi Biellesi. Panorami mozzafiato in
+        totale silenzio.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="story fade-in" style="background: var(--color-bg-section);">
+    <h2>Pronto a Partire?</h2>
+    <p>
+      Se cerchi un luogo dove rallentare davvero, La Piazzetta Del Sole ti aspetta.
+      Contattaci per organizzare il tuo soggiorno perfetto.
+    </p>
+    <a href="contatti.html" class="btn-primary pulse" style="margin-top: 35px;">Richiedi Disponibilità</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="simple">
+    <p><strong>B&B La Piazzetta Del Sole</strong></p>
+    <p>Via Ennio Carando 12, 13843 Pettinengo (BI), Italia</p>
+    <p>Tel: <a href="tel:+393473714016">347 3714016</a> · Email: <a
+        href="mailto:lapiazzettadelsole@gmail.com">lapiazzettadelsole@gmail.com</a></p>
+    <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6;">CIN: IT096042C1SFD FXCRE · CIR: 096042-BEB-00004</p>
+    <p style="margin-top: 10px;">© 2026 La Piazzetta Del Sole</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
