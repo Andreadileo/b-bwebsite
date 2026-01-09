@@ -798,7 +798,205 @@ nav a:hover {
 }
 
 .photo-grid.tall img {
-  height: 380px;
+  height: 450px;
+}
+
+@media (max-width: 768px) {
+  .photo-section {
+    padding: var(--section-padding-mobile);
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid.tall img {
+    height: 300px;
+  }
+}
+
+/* =========================
+   PREMIUM CARDS - For Rooms & Attractions
+========================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  padding: 0 8%;
+  margin-bottom: 80px;
+}
+
+.premium-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-bounce);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.premium-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.premium-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  color: var(--color-accent);
+  padding: 6px 16px;
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-content {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--color-text-dark);
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.card-link {
+  margin-top: auto;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.card-link i {
+  transition: var(--transition-smooth);
+}
+
+.card-link:hover {
+  color: var(--color-accent);
+}
+
+.card-link:hover i {
+  transform: translateX(5px);
+}
+
+/* =========================
+   DETAIL PAGE SPECIFIC
+========================= */
+
+.detail-hero {
+  height: 60vh;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.detail-header {
+  padding: 80px 8%;
+  background: #ffffff;
+}
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  padding: 0 8% 100px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.gallery-grid img:hover {
+  filter: brightness(1.1);
+}
+
+.gallery-grid .main-img {
+  grid-column: span 2;
+  height: 500px;
+}
+
+@media (max-width: 992px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid .main-img {
+    grid-column: span 1;
+    height: 350px;
+  }
 }
 
 /* Gallery Mosaic Layout */
