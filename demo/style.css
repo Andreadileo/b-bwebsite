@@ -139,6 +139,18 @@ img {
   background: var(--color-accent);
 }
 
+/* Logo for hero section - transparent PNG */
+.hero-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 30px;
+  filter:
+    drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5)) brightness(1.1) contrast(1.15) saturate(1.1);
+  animation: fadeInUp 1s ease-out forwards;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -541,7 +553,21 @@ nav a:hover {
   overflow: hidden;
 }
 
-.value-item::before {
+.value-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Clickable card styles */
+.clickable-card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.clickable-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -552,13 +578,28 @@ nav a:hover {
   transition: var(--transition-smooth);
 }
 
-.value-item:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-elevated);
+.clickable-card:hover::before {
+  height: 100%;
 }
 
-.value-item:hover::before {
-  height: 100%;
+.clickable-card .card-action {
+  margin-top: 15px;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-smooth);
+}
+
+.clickable-card:hover .card-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clickable-card:hover {
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.05), rgba(255, 255, 255, 0.95));
+  border-color: var(--color-accent);
 }
 
 .value-icon {
@@ -1365,4 +1406,115 @@ footer.simple a:hover {
   opacity: 0.8;
   max-width: 600px;
   margin: 0 auto;
+}/* =========================
+   LIGHTBOX GALLERY
+========================= */
+
+#lightbox {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+#lightbox.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+/* Indicatore immagine (opzionale) */
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Cursore zoom sulle immagini cliccabili */
+.gallery-grid img,
+.card-image img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
 }

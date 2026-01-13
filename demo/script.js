@@ -258,3 +258,107 @@ document.head.appendChild(style);
 
 console.log('%c🏡 B&B La Piazzetta Del Sole', 'font-size: 20px; font-weight: bold; color: #C9A961;');
 console.log('%cBenvenuto! Sito realizzato con ❤️', 'font-size: 12px; color: #666;');
+
+// ========================================
+// LIGHTBOX GALLERY
+// ========================================
+
+const initLightbox = () => {
+    // Crea elementi lightbox nel DOM se non esistono
+    if (!document.getElementById('lightbox')) {
+        const lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.innerHTML = `
+      <div class="lightbox-close">&times;</div>
+      <div class="lightbox-nav lightbox-prev">&#10094;</div>
+      <div class="lightbox-nav lightbox-next">&#10095;</div>
+      <img src="" alt="Lightbox Image">
+      <div class="lightbox-caption"></div>
+    `;
+        document.body.appendChild(lightbox);
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+
+    // Seleziona tutte le immagini che possono essere aperte
+    // Includiamo gallerie, card immagini, e foto sezioni
+    const images = Array.from(document.querySelectorAll('.gallery-grid img, .photo-section img, .card-image img, .detail-main img'));
+
+    let currentIndex = 0;
+
+    const openLightbox = (index) => {
+        currentIndex = index;
+        const img = images[currentIndex];
+
+        // Gestione src: prende data-src (alta risoluzione) se esiste, altrimenti src normale
+        const imgSrc = img.getAttribute('src');
+        const imgAlt = img.getAttribute('alt');
+
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = imgAlt || '';
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Blocca scroll pagina sotto
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            lightboxImg.src = ''; // Pulisce immagine dopo animazione
+        }, 300);
+    };
+
+    const showNext = (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox(currentIndex);
+    };
+
+    const showPrev = (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox(currentIndex);
+    };
+
+    // Event Listeners sulle immagini
+    images.forEach((img, index) => {
+        // Aggiungi classe per cursore solo se non l'abbiamo già messa col CSS
+        img.style.cursor = 'zoom-in';
+
+        img.addEventListener('click', (e) => {
+            e.preventDefault(); // Previene comportamenti default (es. link)
+            openLightbox(index);
+        });
+    });
+
+    // Controlli Lightbox
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    // Chiudi cliccando fuori dall'immagine
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Navigazione tastiera
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext(e);
+        if (e.key === 'ArrowLeft') showPrev(e);
+    });
+};
+
+// Inizializza Lightbox dopo caricamento DOM
+document.addEventListener('DOMContentLoaded', () => {
+    // Attendi un attimo che eventuali lazy image si carichino o altri script
+    setTimeout(initLightbox, 100);
+});
